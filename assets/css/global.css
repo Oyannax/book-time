@@ -1,0 +1,100 @@
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    font-size: 16px;
+
+    /* Fonts */
+    --dm-serif: 'DM Serif Display', serif;
+    --open-sans: 'Open Sans', sans-serif;
+
+    /* Colors */
+    --white: #fff;
+    --black: #1f1f1f;
+    --light-black: #333;
+    --dark-grey: #7f7f7f;
+    --grey: #949494;
+    --light-grey: #c4c4c4;
+    --orange: #f5ab3d;
+    --light-orange: #fdeed8;
+    --dark-green: #477160;
+    --green: #8eb8a8;
+    --light-green: #cce0d8;
+    --bg: #f7ebde;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: var(--open-sans);
+    display: grid;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, button {
+    border: none;
+}
+
+input {
+    padding: 0;
+    width: 256px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input::placeholder {
+    color: var(--grey);
+}
+
+button {
+    background: none;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.absol {
+    position: absolute;
+}
+
+.relat {
+    position: relative;
+}
+
+.full-height {
+    height: 100%;
+}
+
+
+.header-container {
+    min-width: 360px;
+    background-image: url(../img/header-bg.svg);
+    background-size: contain;
+    background-position: center;
+}
