@@ -1,0 +1,160 @@
+.header-container {
+    gap: 72px;
+}
+
+.header-content {
+    padding-top: 23px;
+}
+
+.header-logo {
+    height: 45px;
+}
+
+.header-title {
+    font-size: 26px;
+}
+
+.header-text {
+    padding-left: 22px;
+    color: var(--light-green);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.logout-icon {
+    padding: 21px 21px 0 0;
+    font-size: 26px;
+    top: 0;
+    right: 0;
+}
+
+.logout-icon>a {
+    color: var(--green);
+    transition: color .5s ease;
+}
+
+.logout-icon>a:hover {
+    color: var(--light-green);
+}
+
+
+.carousel-container {
+    width: 100vw;
+    top: -103px;
+    gap: 4px;
+    scrollbar-width: none;
+}
+
+.slides-container {
+    padding: 0 32px;
+    gap: 17px;
+}
+
+.slide {
+    width: 272px;
+    background-color: var(--white);
+    box-shadow: 9px 9px 20px #00000040;
+}
+
+.add-slide {
+    height: 255px;
+    padding: 32px 18px 18px 32px;
+    border-radius: 8px 8px 82px 8px;
+}
+
+.add-descr {
+    gap: 6px;
+}
+
+.add-title {
+    color: var(--dark-grey);
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.add-icon {
+    width: 133px;
+    color: var(--green);
+    font-size: 133px;
+}
+
+.book-slide {
+    height: 242px;
+    padding: 53px 17px 0;
+    border-radius: 8px 8px 53px 8px;
+}
+
+.bar-container {
+    width: 272px;
+    top: -53px;
+    left: -17px;
+    border-radius: 8px 8px 0 0;
+}
+
+.progress-bar {
+    height: 9px;
+}
+
+.inactive.progress-bar {
+    background-color: var(--light-orange);
+}
+
+.active-bar-container {
+    top: -9px;
+}
+
+.active.progress-bar {
+    background-color: var(--orange);
+    width: 30%;
+}
+
+.bookmark-icon {
+    color: var(--orange);
+    font-size: 34px;
+    top: -1px;
+    left: -13px;
+}
+
+.book-descr {
+    top: -43px;
+    gap: 29px;
+}
+
+.book-title {
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.info-container {
+    gap: 15px;
+}
+
+.book-cover {
+    width: 100px;
+    height: 152px;
+    /* object-fit: cover; */
+    border-radius: 8px;
+}
+
+.arrow {
+    color: var(--light-black);
+    font-size: 24px;
+}
+
+.dots-container {
+    padding: 16px 0;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--light-grey);
+    border-radius: 4px;
+}
+
+.dot.active {
+    background-color: var(--light-black);
+}

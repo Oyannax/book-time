@@ -32,6 +32,12 @@ body {
     background-color: var(--bg);
     font-family: var(--open-sans);
     display: grid;
+    grid-template-rows: 300px auto;
+}
+
+p {
+    color: var(--grey);
+    font-size: 15px;
 }
 
 ul,
@@ -44,11 +50,11 @@ a {
 }
 
 input, button {
+    padding: 0;
     border: none;
 }
 
 input {
-    padding: 0;
     width: 256px;
     border-radius: 5px;
     text-align: center;
@@ -71,12 +77,28 @@ button {
     align-items: center;
 }
 
+.ai-end {
+    align-items: flex-end;
+}
+
 .jc-center {
     justify-content: center;
 }
 
+.jc-around {
+    justify-content: space-around;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
 .column {
     flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .absol {
@@ -91,10 +113,40 @@ button {
     height: 100%;
 }
 
+.full-width {
+    width: 100%;
+}
+
+.fit-height {
+    height: fit-content;
+}
+
+.fit-width {
+    width: fit-content;
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+
+.y-hidden {
+    overflow-y: hidden;
+}
+
 
 .header-container {
     min-width: 360px;
     background-image: url(../img/header-bg.svg);
     background-size: contain;
     background-position: center;
+}
+
+.header-content {
+    gap: 6px;
+}
+
+.header-title {
+    font-family: var(--dm-serif);
+    font-weight: 400;
+    color: var(--light-green);
 }
