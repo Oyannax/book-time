@@ -1,3 +1,4 @@
+/* VARIANTS */
 .login {
     gap: 100px;
 }
@@ -5,8 +6,10 @@
 .register {
     gap: 60px;
 }
+/* ******** */
 
 
+/* HEADER */
 .header-logo {
     height: 60px;
 }
@@ -15,8 +18,10 @@
     font-size: 39px;
     line-height: 30px;
 }
+/* ******** */
 
 
+/* FORM */
 .form-container {
     gap: 32px;
 }

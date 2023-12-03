@@ -23,6 +23,8 @@
     --bg: #f7ebde;
 }
 
+
+/* NORMALIZER */
 html,
 body {
     height: 100%;
@@ -67,8 +69,10 @@ input::placeholder {
 button {
     background: none;
 }
+/* ******** */
 
 
+/* SHORTCUTS */
 .flex {
     display: flex;
 }
@@ -133,7 +137,13 @@ button {
     overflow-y: hidden;
 }
 
+.border {
+    border-radius: 8px;
+}
+/* ******** */
 
+
+/* GLOBAL */
 .header-container {
     min-width: 360px;
     background-image: url(../img/header-bg.svg);

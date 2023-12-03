@@ -1,3 +1,12 @@
+/* IN COMMON */
+.add-title, .reading-title {
+    color: var(--dark-grey);
+    font-weight: 600;
+}
+/* ******** */
+
+
+/* HEADER */
 .header-container {
     gap: 72px;
 }
@@ -36,11 +45,13 @@
 .logout-icon>a:hover {
     color: var(--light-green);
 }
+/* ******** */
 
 
+/* CAROUSEL */
 .carousel-container {
     width: 100vw;
-    top: -103px;
+    margin-top: -103px;
     gap: 4px;
     scrollbar-width: none;
 }
@@ -67,9 +78,7 @@
 }
 
 .add-title {
-    color: var(--dark-grey);
     font-size: 23px;
-    font-weight: 600;
 }
 
 .add-icon {
@@ -116,7 +125,7 @@
 }
 
 .book-descr {
-    top: -43px;
+    margin-top: -43px;
     gap: 29px;
 }
 
@@ -157,4 +166,34 @@
 
 .dot.active {
     background-color: var(--light-black);
+}
+/* ******** */
+
+
+/* NOW READING */
+.reading-container {
+    padding: 0 32px;
+    margin-top: 19px;
+}
+
+.reading-content {
+    background-color: var(--white);
+    padding: 13px 21px;
+}
+
+.reading-title {
+    font-size: 17px;
+}
+
+.small-cover {
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--white);
+    border-radius: 17px;
+    box-shadow: 0 0 10px #00000029;
+    object-fit: cover;
+}
+
+.small-cover.next {
+    margin-left: -11px;
 }
