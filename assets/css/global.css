@@ -30,6 +30,10 @@ body {
     height: 100%;
 }
 
+html {
+    scrollbar-width: none;
+}
+
 body {
     background-color: var(--bg);
     font-family: var(--open-sans);
@@ -51,8 +55,12 @@ a {
     text-decoration: none;
 }
 
-input, button {
+ul, input, button {
     padding: 0;
+    border: none;
+}
+
+input, button {
     border: none;
 }
 
@@ -129,16 +137,25 @@ button {
     width: fit-content;
 }
 
+.device-width {
+    width: 100vw;
+}
+
 .over-hidden {
     overflow: hidden;
 }
 
 .y-hidden {
     overflow-y: hidden;
+    scrollbar-width: none;
 }
 
 .border {
     border-radius: 8px;
+}
+
+.padding {
+    padding: 0 32px;
 }
 /* ******** */
 

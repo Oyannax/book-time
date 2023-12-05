@@ -26,74 +26,146 @@
             <a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </header>
-    <main>
-        <section class="carousel-container flex column y-hidden">
-            <div class="slides-container flex fit-width">
-                <div class="slide add-slide flex ai-end jc-between column">
-                    <div class="add-descr flex column">
-                        <h3 class="add-title">Ajouter un livre</h3>
-                        <p class="add-text">Quel livre avez-vous lu aujourd'hui ?</p>
+    <main class="books-main flex column">
+        <section class="reading-books flex column">
+            <div class="carousel-container flex column device-width">
+                <div class="carousel-content y-hidden">
+                    <div class="slide-container flex fit-width padding">
+                        <div class="slide add-slide flex ai-end jc-between column">
+                            <div class="add-descr flex column">
+                                <h3 class="add-title">Ajouter un livre</h3>
+                                <p class="add-text">Quel livre avez-vous lu aujourd'hui ?</p>
+                            </div>
+                            <i class="add-icon text-center fa-solid fa-plus"></i>
+                        </div>
+                        <div class="slide book-slide">
+                            <div class="bar-container relat over-hidden">
+                                <div class="progress-bar inactive"></div>
+                                <div class="active-bar-container flex relat">
+                                    <div class="progress-bar active"></div>
+                                    <i class="bookmark-icon relat fa-solid fa-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="book-descr flex column">
+                                <h3 class="book-title">The Hunger Games</h3>
+                                <div class="info-container flex">
+                                    <img class="book-cover" src="../assets/img/the-hunger-games.jpg"
+                                        alt="The Hunger Games book cover">
+                                    <p class="book-author">Suzanne Collins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide book-slide">
+                            <div class="bar-container relat over-hidden">
+                                <div class="progress-bar inactive"></div>
+                                <div class="active-bar-container flex relat">
+                                    <div class="progress-bar active"></div>
+                                    <i class="bookmark-icon relat fa-solid fa-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="book-descr flex column">
+                                <h3 class="book-title">The Hunger Games</h3>
+                                <div class="info-container flex">
+                                    <img class="book-cover" src="../assets/img/the-hunger-games.jpg"
+                                        alt="The Hunger Games book cover">
+                                    <p class="book-author">Suzanne Collins</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <i class="add-icon text-center fa-solid fa-plus"></i>
                 </div>
-                <div class="slide book-slide">
-                    <div class="bar-container relat over-hidden">
-                        <div class="progress-bar inactive"></div>
-                        <div class="active-bar-container flex relat">
-                            <div class="progress-bar active"></div>
-                            <i class="bookmark-icon relat fa-solid fa-bookmark"></i>
-                        </div>
-                    </div>
-                    <div class="book-descr flex column">
-                        <h3 class="book-title">The Hunger Games</h3>
-                        <div class="info-container flex">
-                            <img class="book-cover" src="../assets/img/the-hunger-games.jpg"
-                                alt="The Hunger Games book cover">
-                            <p class="book-author">Suzanne Collins</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide book-slide">
-                    <div class="bar-container relat over-hidden">
-                        <div class="progress-bar inactive"></div>
-                        <div class="active-bar-container flex relat">
-                            <div class="progress-bar active"></div>
-                            <i class="bookmark-icon relat fa-solid fa-bookmark"></i>
-                        </div>
-                    </div>
-                    <div class="book-descr flex column">
-                        <h3 class="book-title">The Hunger Games</h3>
-                        <div class="info-container flex">
-                            <img class="book-cover" src="../assets/img/the-hunger-games.jpg"
-                                alt="The Hunger Games book cover">
-                            <p class="book-author">Suzanne Collins</p>
-                        </div>
-                    </div>
+                <div class="controls-container flex jc-around">
+                    <button class="arrow prev">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+                    <ul class="dot-container flex">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                    </ul>
+                    <button class="arrow next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
                 </div>
             </div>
-            <div class="controls-container flex jc-around">
-                <button class="arrow prev">
-                    <i class="fa-solid fa-angle-left"></i>
-                </button>
-                <div class="dots-container flex">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+            <div class="reading-container padding">
+                <div class="reading-content flex ai-center jc-between border">
+                    <div class="reading-descr">
+                        <h4 class="reading-title">Vous lisez <span>2</span> livres.</h4>
+                        <p>Plus</p>
+                    </div>
+                    <ul class="book-covers flex">
+                        <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                        <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                    </ul>
                 </div>
-                <button class="arrow next">
-                    <i class="fa-solid fa-angle-right"></i>
-                </button>
             </div>
         </section>
-        <section class="reading-container">
-            <div class="reading-content flex ai-center jc-between border">
-                <div class="reading-descr">
-                    <h4 class="reading-title">Vous lisez <span>2</span> livres.</h4>
-                    <p>Plus</p>
+        <section class="books-section flex column">
+            <div class="section-header flex ai-center jc-between padding">
+                <div class="section-title">
+                    <h4>À lire</h4>
+                    <div class="highlight"></div>
                 </div>
-                <div class="reading-covers flex">
-                    <img class="small-cover first" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
-                    <img class="small-cover next" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
+                <p>Plus</p>
+            </div>
+            <div class="to-read-container flex column ai-center device-width">
+                <div class="to-read-content flex device-width y-hidden">
+                    <ul class="to-read-covers flex">
+                        <li class="add-cover flex ai-center jc-center">
+                            <i class="add-icon text-center fa-solid fa-plus"></i>
+                        </li>
+                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg"
+                                alt="The Hunger Games book cover"></li>
+                    </ul>
+                </div>
+                <div class="highlight"></div>
+            </div>
+        </section>
+        <section class="books-section flex column">
+            <div class="section-header flex ai-center jc-between padding">
+                <div class="section-title">
+                    <h4>Listes</h4>
+                    <div class="highlight"></div>
+                </div>
+                <p>Plus</p>
+            </div>
+            <div class="list-container device-width y-hidden">
+                <div class="lists flex fit-width padding">
+                    <div class="list-content flex column jc-between border">
+                        <ul class="book-covers flex">
+                            <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                    alt="The Hunger Games book cover"></li>
+                        </ul>
+                        <div>
+                            <h4 class="list-title">Liste de souhaits</h4>
+                            <p><span>1</span> livre</p>
+                        </div>
+                    </div>
+                    <div class="list-content flex column jc-between border">
+                        <ul class="book-covers flex">
+                            <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                    alt="The Hunger Games book cover"></li>
+                            <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                    alt="The Hunger Games book cover"></li>
+                            <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg"
+                                    alt="The Hunger Games book cover"></li>
+                        </ul>
+                        <div>
+                            <h4 class="list-title">Préférés</h4>
+                            <p><span>4</span> livres</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
