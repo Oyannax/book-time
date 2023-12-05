@@ -11,6 +11,10 @@
 .book-covers>.next {
     margin-left: -11px;
 }
+
+.to-read-content, .list-container {
+    cursor: grab;
+}
 /* ******** */
 
 
@@ -74,6 +78,7 @@
 .carousel-content {
     padding: 30px 0;
     margin: -30px 0;
+    scroll-behavior: smooth;
 }
 
 .slide-container {
@@ -171,6 +176,10 @@
     font-size: 24px;
 }
 
+.arrow:disabled {
+    color: var(--light-grey);
+}
+
 .dot-container {
     padding: 16px 0;
     gap: 8px;
@@ -234,6 +243,7 @@
 
 .to-read-content {
     z-index: 1;
+    cursor: grab;
 }
 
 .to-read-covers {

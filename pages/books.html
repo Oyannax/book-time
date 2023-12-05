@@ -29,7 +29,7 @@
     <main class="books-main flex column">
         <section class="reading-books flex column">
             <div class="carousel-container flex column device-width">
-                <div class="carousel-content y-hidden">
+                <div class="carousel-content over-hidden">
                     <div class="slide-container flex fit-width padding">
                         <div class="slide add-slide flex ai-end jc-between column">
                             <div class="add-descr flex column">
@@ -75,15 +75,15 @@
                     </div>
                 </div>
                 <div class="controls-container flex jc-around">
-                    <button class="arrow prev">
+                    <button id="prev" class="arrow prev" type="button" disabled>
                         <i class="fa-solid fa-angle-left"></i>
                     </button>
                     <ul class="dot-container flex">
-                        <li class="dot active"></li>
+                        <li class="dot"></li>
                         <li class="dot"></li>
                         <li class="dot"></li>
                     </ul>
-                    <button class="arrow next">
+                    <button id="next" class="arrow next" type="button">
                         <i class="fa-solid fa-angle-right"></i>
                     </button>
                 </div>
@@ -112,7 +112,7 @@
                 <p>Plus</p>
             </div>
             <div class="to-read-container flex column ai-center device-width">
-                <div class="to-read-content flex device-width y-hidden">
+                <div class="to-read-content flex device-width over-hidden">
                     <ul class="to-read-covers flex">
                         <li class="add-cover flex ai-center jc-center">
                             <i class="add-icon text-center fa-solid fa-plus"></i>
@@ -140,7 +140,7 @@
                 </div>
                 <p>Plus</p>
             </div>
-            <div class="list-container device-width y-hidden">
+            <div class="list-container device-width over-hidden">
                 <div class="lists flex fit-width padding">
                     <div class="list-content flex column jc-between border">
                         <ul class="book-covers flex">
@@ -170,6 +170,7 @@
             </div>
         </section>
     </main>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>
