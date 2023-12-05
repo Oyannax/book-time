@@ -1,3 +1,8 @@
+<?php
+require_once '../vendor/autoload.php';
+include '../includes/_db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
