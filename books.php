@@ -1,6 +1,10 @@
 <?php
-require_once '../vendor/autoload.php';
-include '../includes/_db.php';
+require_once './vendor/autoload.php';
+require_once './includes/_functions.php';
+include './includes/_db.php';
+
+session_start();
+generateToken();
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +13,9 @@ include '../includes/_db.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/tabs.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/tabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Book Time - Liste de lecture</title>
 </head>
@@ -20,16 +24,19 @@ include '../includes/_db.php';
     <header>
         <div class="header-container flex column full-height">
             <div class="header-content flex jc-center fit-height">
-                <img class="header-logo" src="../assets/img/light-bt-logo.png" alt="Book Time logo">
+                <img class="header-logo" src="./assets/img/light-bt-logo.png" alt="Book Time logo">
                 <h1 class="header-title flex ai-center">Book<br>Time</h1>
             </div>
             <h2 class="header-text">Bienvenue !</h2>
         </div>
         <div class="logout-icon absol fit-width">
-            <a href="../login.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a href="./index.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </header>
     <main class="books-main flex column">
+        <section>
+            <?= displayNotif() ?>
+        </section>
         <section class="reading-books flex column">
             <div class="carousel-container flex column device-width">
                 <div class="carousel-content over-hidden">
@@ -52,7 +59,7 @@ include '../includes/_db.php';
                             <div class="book-descr flex column">
                                 <h3 class="book-title over-hidden">The Hunger Games</h3>
                                 <div class="info-container flex">
-                                    <img class="book-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
+                                    <img class="book-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
                                     <p class="book-author">Suzanne Collins</p>
                                 </div>
                             </div>
@@ -68,7 +75,7 @@ include '../includes/_db.php';
                             <div class="book-descr flex column">
                                 <h3 class="book-title over-hidden">The Hunger Games</h3>
                                 <div class="info-container flex">
-                                    <img class="book-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
+                                    <img class="book-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover">
                                     <p class="book-author">Suzanne Collins</p>
                                 </div>
                             </div>
@@ -96,8 +103,8 @@ include '../includes/_db.php';
                         <p>Plus</p>
                     </div>
                     <ul class="book-covers flex">
-                        <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                        <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li class="first"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li class="next"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                     </ul>
                 </div>
             </div>
@@ -116,11 +123,11 @@ include '../includes/_db.php';
                         <li class="add-cover flex ai-center jc-center">
                             <i class="add-icon text-center fa-solid fa-plus"></i>
                         </li>
-                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                        <li><img class="medium-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                        <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                     </ul>
                 </div>
                 <div class="highlight"></div>
@@ -138,7 +145,7 @@ include '../includes/_db.php';
                 <div class="lists flex fit-width padding">
                     <div class="list-content flex column jc-between border">
                         <ul class="book-covers flex">
-                            <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                            <li class="first"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                         </ul>
                         <div>
                             <h4 class="list-title">Liste de souhaits</h4>
@@ -147,9 +154,9 @@ include '../includes/_db.php';
                     </div>
                     <div class="list-content flex column jc-between border">
                         <ul class="book-covers flex">
-                            <li class="first"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                            <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
-                            <li class="next"><img class="small-cover" src="../assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                            <li class="first"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                            <li class="next"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
+                            <li class="next"><img class="small-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                         </ul>
                         <div>
                             <h4 class="list-title">Préférés</h4>
@@ -160,7 +167,7 @@ include '../includes/_db.php';
             </div>
         </section>
     </main>
-    <script src="../assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,12 @@
+<?php
+require_once './vendor/autoload.php';
+require_once './includes/_functions.php';
+include './includes/_db.php';
+
+session_start();
+generateToken();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,18 +29,21 @@
         </div>
     </header>
     <main>
+        <section>
+            <?= displayNotif() ?>
+        </section>
         <section class="form-container flex column ai-center">
             <form class="form-content flex column" action="action.php" method="post">
                 <div class="inputs-container flex column">
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
                     <input class="text-input" type="password" name="password" placeholder="Mot de passe" required>
                     <input type="hidden" name="action" value="login">
-                    <input type="hidden" name="token" value="">
+                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                 </div>
                 <input class="submit-input" type="submit" value="Se connecter">
             </form>
             <div class="link-container text-center">
-                <p>Vous n'avez pas de compte ?<br><a href="./pages/register.php">Inscrivez-vous</a></p>
+                <p>Vous n'avez pas de compte ?<br><a href="./register.php">Inscrivez-vous</a></p>
             </div>
         </section>
     </main>
