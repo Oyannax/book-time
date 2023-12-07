@@ -88,13 +88,37 @@ function checkXSS(array &$array): void
     $array = array_map('strip_tags', $array);
 }
 
-function checkPwdFormat(string $pwd)
+/**
+ * Check if the password matches the requested pattern
+ *
+ * @param string $pwd
+ * @return boolean
+ */
+function checkPwdFormat(string $pwd): bool
 {
     $uppercase = preg_match('@[A-Z]@', $pwd);
     $lowercase = preg_match('@[a-z]@', $pwd);
     $number = preg_match('@[0-9]@', $pwd);
 
     if (!$uppercase || !$lowercase || !$number || strlen($pwd) < 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
+ * Check if an email is in a valid format
+ *
+ * @param string $email
+ * @return boolean
+ */
+function checkEmailFormat(string $email): bool
+{
+    $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $atPos = mb_strpos($cleanEmail, '@');
+    $domain = mb_substr($cleanEmail, $atPos + 1);
+    if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL) || !checkdnsrr($domain . '.', 'MX')) {
         return false;
     } else {
         return true;

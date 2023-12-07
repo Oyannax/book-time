@@ -27,7 +27,14 @@ generateToken();
                 <img class="header-logo" src="./assets/img/light-bt-logo.png" alt="Book Time logo">
                 <h1 class="header-title flex ai-center">Book<br>Time</h1>
             </div>
-            <h2 class="header-text">Bienvenue !</h2>
+            <?php
+            $query = $dbCo->prepare('SELECT username FROM profile WHERE id_profile = :id');
+            $query->execute([
+                'id' => $_SESSION['id_profile']
+            ]);
+            $username = $query->fetchColumn();
+            ?>
+            <h2 class="header-text">Bienvenue <?= $username ?> !</h2>
         </div>
         <div class="logout-icon absol fit-width">
             <a href="./index.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
