@@ -1,11 +1,11 @@
-<!-- <?php
+<?php
 require_once './vendor/autoload.php';
 require_once './includes/_functions.php';
 include './includes/_db.php';
 
 session_start();
 generateToken();
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,14 +27,14 @@ generateToken();
                 <img class="header-logo" src="./assets/img/light-bt-logo.png" alt="Book Time logo">
                 <h1 class="header-title flex ai-center">Book<br>Time</h1>
             </div>
-            <!-- <?php
+            <?php
             $query = $dbCo->prepare('SELECT username FROM profile WHERE id_profile = :id');
             $query->execute([
                 'id' => $_SESSION['id_profile']
             ]);
             $username = $query->fetchColumn();
-            ?> -->
-            <!-- <h2 class="header-text">Bienvenue <?= $username ?> !</h2> -->
+            ?>
+            <h2 class="header-text">Bienvenue <?= $username ?> !</h2>
         </div>
         <div class="logout-icon absol fit-width">
             <a href="./action.php?action=logout&token=<?= $_SESSION['token'] ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>

@@ -46,13 +46,20 @@ p {
     font-size: 15px;
 }
 
+a {
+    text-decoration: none;
+}
+
 ul,
 li {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: solid 3px var(--orange);
 }
 
 ul, input, button {
