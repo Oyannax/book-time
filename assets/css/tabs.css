@@ -86,7 +86,8 @@
 }
 
 .slide {
-    width: 272px;
+    /* width: 272px; */
+    width: calc(100vw - (32px + 17px + 39px));
     background-color: var(--white);
     box-shadow: 9px 9px 20px #00000040;
 }
@@ -113,13 +114,13 @@
 
 .book-slide {
     height: 242px;
-    padding: 53px 17px 0;
+    padding: 42px 17px 0;
     border-radius: 8px 8px 53px 8px;
 }
 
 .bar-container {
-    width: 272px;
-    top: -53px;
+    width: calc(100% + 17px * 2);
+    top: -42px;
     left: -17px;
     border-radius: 8px 8px 0 0;
 }
@@ -139,6 +140,7 @@
 .active.progress-bar {
     background-color: var(--orange);
     width: 30%;
+    flex-shrink: 0;
 }
 
 .bookmark-icon {
@@ -157,7 +159,10 @@
     color: var(--black);
     font-size: 24px;
     font-weight: 600;
+    line-height: 32px;
     padding-left: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .info-container {
@@ -292,7 +297,7 @@
 }
 
 .list-content {
-    width: 180px;
+    width: calc(100vw / 2);
     height: 113px;
     padding: 13px 21px;
     background-color: var(--white);

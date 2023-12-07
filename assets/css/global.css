@@ -163,7 +163,7 @@ button {
 
 /* GLOBAL */
 .header-container {
-    min-width: 360px;
+    min-width: 320px;
     background-image: url(../img/header-bg.svg);
     background-size: contain;
     background-position: center;

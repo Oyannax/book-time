@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/id.css">
-    <title>Book Time - Connexion</title>
+    <title>Book Time - Inscription</title>
 </head>
 
-<body class="login">
+<body class="register">
     <header>
         <div class="header-container flex ai-center jc-center full-height">
             <div class="header-content flex ai-center">
@@ -23,15 +23,17 @@
         <section class="form-container flex column ai-center">
             <form class="form-content flex column" action="action.php" method="post">
                 <div class="inputs-container flex column">
+                    <input class="text-input" type="text" name="username" placeholder="Nom d'utilisateur" required>
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
                     <input class="text-input" type="password" name="password" placeholder="Mot de passe" required>
+                    <input class="text-input" type="password" name="password-check" placeholder="Confirmez le mot de passe" required>
                     <input type="hidden" name="action" value="login">
                     <input type="hidden" name="token" value="">
                 </div>
-                <input class="submit-input" type="submit" value="Se connecter">
+                <input class="submit-input" type="submit" value="S'inscrire">
             </form>
             <div class="link-container text-center">
-                <p>Vous n'avez pas de compte ?<br><a href="./register.html">Inscrivez-vous</a></p>
+                <p>Vous avez un compte ?<br><a href="../login.php">Connectez-vous</a></p>
             </div>
         </section>
     </main>
