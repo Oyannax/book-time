@@ -88,6 +88,19 @@ function checkXSS(array &$array): void
     $array = array_map('strip_tags', $array);
 }
 
+function checkPwdFormat(string $pwd)
+{
+    $uppercase = preg_match('@[A-Z]@', $pwd);
+    $lowercase = preg_match('@[a-z]@', $pwd);
+    $number = preg_match('@[0-9]@', $pwd);
+
+    if (!$uppercase || !$lowercase || !$number || strlen($pwd) < 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 // NOTIFICATIONS
 /**

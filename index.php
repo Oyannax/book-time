@@ -29,7 +29,7 @@ generateToken();
         </div>
     </header>
     <main>
-        <section>
+        <section class="absol">
             <?= displayNotif() ?>
         </section>
         <section class="form-container flex column ai-center">

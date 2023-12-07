@@ -29,7 +29,7 @@ generateToken();
         </div>
     </header>
     <main>
-        <section>
+        <section class="absol">
             <?= displayNotif() ?>
         </section>
         <section class="form-container flex column ai-center">
@@ -37,7 +37,7 @@ generateToken();
                 <div class="inputs-container flex column">
                     <input class="text-input" type="text" name="username" placeholder="Nom d'utilisateur" required>
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
-                    <input class="text-input" type="password" name="password" placeholder="Mot de passe" required>
+                    <input class="text-input" type="password" name="password" placeholder="Mot de passe" title="Au moins 8 caractères, dont un chiffre, une majuscule et une minuscule" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <input class="text-input" type="password" name="password-check" placeholder="Confirmez le mot de passe" required>
                     <input type="hidden" name="action" value="register">
                     <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">

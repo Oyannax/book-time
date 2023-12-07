@@ -34,7 +34,7 @@ generateToken();
         </div>
     </header>
     <main class="books-main flex column">
-        <section>
+        <section class="absol">
             <?= displayNotif() ?>
         </section>
         <section class="reading-books flex column">
