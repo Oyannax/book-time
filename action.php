@@ -79,4 +79,12 @@ else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_REQUEST['action'] === 'login
     }
 }
 
+// LOGOUT
+else if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_REQUEST['action'] === 'logout') {
+    unset($_SESSION['id_profile']);
+    addMsg('Vous êtes déconnecté(e).');
+    header('Location: index.php');
+    exit;
+}
+
 header('Location: books.php');

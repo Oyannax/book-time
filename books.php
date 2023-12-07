@@ -37,7 +37,7 @@ generateToken();
             <h2 class="header-text">Bienvenue <?= $username ?> !</h2>
         </div>
         <div class="logout-icon absol fit-width">
-            <a href="./index.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a href="./action.php?action=logout&token=<?= $_SESSION['token'] ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </header>
     <main class="books-main flex column">
