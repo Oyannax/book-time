@@ -31,14 +31,15 @@ generateToken();
     <main>
         <section class="absol">
             <?= displayNotif() ?>
+            <ul id="notifContainer"></ul>
         </section>
         <section class="form-container flex column ai-center">
-            <form class="form-content flex column" action="action.php" method="post">
+            <form id="loginForm" class="form-content flex column" action="action.php" method="post">
                 <div class="inputs-container flex column">
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
                     <input class="text-input" type="password" name="password" placeholder="Mot de passe" required>
                     <input type="hidden" name="action" value="login">
-                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                    <input id="token" type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                 </div>
                 <input class="submit-input" type="submit" value="Se connecter">
             </form>
@@ -47,6 +48,8 @@ generateToken();
             </div>
         </section>
     </main>
+
+    <script type="module" src="assets/js/index.js"></script>
 </body>
 
 </html>

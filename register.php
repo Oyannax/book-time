@@ -40,7 +40,7 @@ generateToken();
                     <input class="text-input" type="password" name="password" placeholder="Mot de passe" title="Au moins 8 caractères, dont un chiffre, une majuscule et une minuscule" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <input class="text-input" type="password" name="password-check" placeholder="Confirmez le mot de passe" required>
                     <input type="hidden" name="action" value="register">
-                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                    <input id="token" type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                 </div>
                 <input class="submit-input" type="submit" value="S'inscrire">
             </form>

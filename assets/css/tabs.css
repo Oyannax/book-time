@@ -87,7 +87,8 @@
 
 .slide {
     /* width: 272px; */
-    width: calc(100vw - (32px + 17px + 39px));
+    /* width: calc(100vw - (32px + 17px + 39px)); */
+    width: calc(100vw - (32px + 17px + 40px));
     background-color: var(--white);
     box-shadow: 9px 9px 20px #00000040;
 }

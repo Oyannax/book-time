@@ -1,5 +1,5 @@
 <?php
-// SECURITY FUNCTIONS
+// SECURITY
 /**
  * Generate a valid token in $_SESSION
  *
@@ -52,7 +52,7 @@ function checkCSRF(string $url): void
  * @param string $data
  * @return void
  */
-function checkCSRFAsync(string $data): void
+function checkCSRFAsync(array $data): void
 {
     if (
         !isset($_SERVER['HTTP_REFERER'])
@@ -167,6 +167,22 @@ function throwAsyncError(string $error): void
 function addMsg(string $msg): void
 {
     $_SESSION['msg'] = $msg;
+}
+
+/**
+ * ASYNC
+ * Add a message to display and stop script
+ *
+ * @param string $msg
+ * @return void
+ */
+function throwAsyncMsg(string $msg): void
+{
+    echo json_encode([
+        'result' => true,
+        'msg' => $msg
+    ]);
+    exit;
 }
 
 /**

@@ -55,13 +55,6 @@ li {
     list-style: none;
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: solid 3px var(--orange);
-}
-
 ul, input, button {
     padding: 0;
     border: none;
@@ -79,6 +72,10 @@ input {
 
 input::placeholder {
     color: var(--grey);
+}
+
+input:focus {
+    outline: solid 3px var(--orange);
 }
 
 button {
