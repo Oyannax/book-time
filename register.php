@@ -33,7 +33,7 @@ generateToken();
             <?= displayNotif() ?>
         </section>
         <section class="form-container flex column ai-center">
-            <form class="form-content flex column" action="action.php" method="post">
+            <form id="registerForm" class="form-content flex column" action="" method="post">
                 <div class="inputs-container flex column">
                     <input class="text-input" type="text" name="username" placeholder="Nom d'utilisateur" required>
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
@@ -49,6 +49,8 @@ generateToken();
             </div>
         </section>
     </main>
+
+    <script type="module" src="assets/js/register.js"></script>
 </body>
 
 </html>

@@ -1,19 +1,22 @@
 import * as utils from './functions';
 
-const notifContainer = document.getElementById('notifContainer');
-if (notifContainer.children.length > 0) setTimeout(() => notifContainer.innerHTML = '', 2000);
-
-document.getElementById('loginForm').addEventListener('submit', function (event) {
+document.getElementById('registerForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const data = {
-        action: 'login',
+        action: 'register',
         token: utils.getToken(),
+        username: this.querySelector('input[name="username"]').value,
         email: this.querySelector('input[name="email"]').value,
-        password: this.querySelector('input[name="password"]').value
+        password: this.querySelector('input[name="password"]').value,
+        passwordCheck: this.querySelector('input[name="password-check"]').value
     };
 
     if (data.token.length < 1) {
         utils.displayError('error_token');
+        return;
+    }
+    if (data.username.length < 1) {
+        utils.displayError('Veuillez saisir un nom d\'utilisateur.');
         return;
     }
     if (data.email.length < 1) {
@@ -22,6 +25,10 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     }
     if (data.password.length < 1) {
         utils.displayError('Veuillez saisir un mot de passe.');
+        return;
+    }
+    if (data.passwordCheck.length < 1 || data.password !== data.passwordCheck) {
+        utils.displayError('Veuillez confirmer le mot de passe.');
         return;
     }
 

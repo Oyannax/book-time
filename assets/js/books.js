@@ -1,3 +1,7 @@
+const notifContainer = document.getElementById('notifContainer');
+if (notifContainer.children.length > 0) setTimeout(() => notifContainer.innerHTML = '', 2000);
+
+
 const carousel = document.querySelector('.carousel-content');
 const firstSlide = document.querySelectorAll('.slide')[0];
 const nextSlide = document.querySelectorAll('.slide')[1];

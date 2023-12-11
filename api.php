@@ -13,12 +13,12 @@ checkCSRFAsync($data);
 checkXSS($data);
 
 // REGISTER
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'register' && isset($data['username']) && isset($data['email']) && isset($data['password']) && isset($data['password-check'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'register' && isset($data['username']) && isset($data['email']) && isset($data['password']) && isset($data['passwordCheck'])) {
     // All fields completed?
     if (strlen($data['username']) <= 0) throwAsyncError('Veuillez saisir un nom d\'utilisateur.');
     if (strlen($data['email']) <= 0) throwAsyncError('Veuillez saisir une adresse mail.');
     if (strlen($data['password']) <= 0) throwAsyncError('Veuillez saisir un mot de passe.');
-    if (strlen($data['password-check']) <= 0 || $data['password'] !== $data['password-check']) throwAsyncError('Veuillez confirmer le mot de passe.');
+    if (strlen($data['passwordCheck']) <= 0 || $data['password'] !== $data['passwordCheck']) throwAsyncError('Veuillez confirmer le mot de passe.');
 
     // Valid email?
     $email = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'register' && i
 
         if ($isRegisterOk) {
             $_SESSION['id_profile'] = $dbCo->lastInsertId();
-            throwAsyncMsg('Votre compte a été créé avec succès !');
+            throwAsyncMsg('Votre compte a été créé avec succès ! Redirection...');
         }
     } catch (Exception $e) {
         throwAsyncError('Une erreur s\'est produite lors de la création du compte.' . $e->getMessage());
@@ -78,10 +78,4 @@ else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'login' &&
     } catch (Exception $e) {
         throwAsyncError('Une erreur s\'est produite lors de la connexion au compte.' . $e->getMessage());
     }
-}
-
-// LOGOUT
-else if ($_SERVER['REQUEST_METHOD'] === 'GET' && $data['action'] === 'logout') {
-    unset($_SESSION['id_profile']);
-    throwAsyncMsg('Vous êtes déconnecté(e).');
 }

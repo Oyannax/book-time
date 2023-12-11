@@ -49,7 +49,7 @@ function checkCSRF(string $url): void
  * ASYNC
  * Check for CSRF with referer and token
  *
- * @param string $data
+ * @param array $data
  * @return void
  */
 function checkCSRFAsync(array $data): void
@@ -192,15 +192,15 @@ function throwAsyncMsg(string $msg): void
  */
 function displayNotif(): string
 {
-    $html = '<ul>';
+    $html = '<ul id="notifContainer">';
 
     if (isset($_SESSION['msg'])) {
-        $html .= '<li>' . $_SESSION['msg'] . '</li>';
+        $html .= '<li id="session">' . $_SESSION['msg'] . '</li>';
         unset($_SESSION['msg']);
     }
 
     if (isset($_SESSION['error'])) {
-        $html .= '<li>' . $_SESSION['error'] . '</li>';
+        $html .= '<li id="session">' . $_SESSION['error'] . '</li>';
         unset($_SESSION['error']);
     }
 
