@@ -21,6 +21,8 @@
     --green: #8eb8a8;
     --light-green: #cce0d8;
     --bg: #f7ebde;
+    --success: #0072B5;
+    --alert: #EF3340;
 }
 
 
@@ -181,4 +183,45 @@ button {
     font-family: var(--dm-serif);
     font-weight: 400;
     color: var(--light-green);
+}
+
+.notif-container {
+    margin-left: 30px;
+    top: 25px;
+    right: 30px;
+    gap: 16px;
+}
+
+.notif {
+    background-color: var(--white);
+    color: var(--light-black);
+    font-weight: 600;
+    padding: 20px 30px 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px #0000001a;
+    gap: 16px;
+}
+
+.msg {
+    border-left: 6px solid var(--success);
+}
+
+.error {
+    border-left: 6px solid var(--alert);
+}
+
+.notif>.icon {
+    min-width: 31px;
+    height: 31px;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+}
+
+.msg>.icon {
+    background-color: var(--success);
+}
+
+.error>.icon {
+    background-color: var(--alert);
 }

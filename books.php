@@ -174,7 +174,7 @@ generateToken();
             </div>
         </section>
     </main>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/books.js"></script>
 </body>
 
 </html>

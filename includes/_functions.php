@@ -192,15 +192,15 @@ function throwAsyncMsg(string $msg): void
  */
 function displayNotif(): string
 {
-    $html = '<ul id="notifContainer">';
+    $html = '<ul id="notifContainer" class="notif-container">';
 
     if (isset($_SESSION['msg'])) {
-        $html .= '<li id="session">' . $_SESSION['msg'] . '</li>';
+        $html .= '<li class="notif msg flex ai-center"><i class="icon jc-center ai-center fa-solid fa-check"></i>' . $_SESSION['msg'] . '</li>';
         unset($_SESSION['msg']);
     }
 
     if (isset($_SESSION['error'])) {
-        $html .= '<li id="session">' . $_SESSION['error'] . '</li>';
+        $html .= '<li class="notif error flex ai-center"><i class="icon jc-center ai-center fa-solid fa-exclamation"></i>' . $_SESSION['error'] . '</li>';
         unset($_SESSION['error']);
     }
 

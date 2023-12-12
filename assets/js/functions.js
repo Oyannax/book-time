@@ -18,9 +18,13 @@ export function getToken() {
  */
 export function displayError(error) {
     const notif = document.createElement('li');
-    // notif.classList.add('');
+    notif.classList.add('notif', 'error', 'flex', 'ai-center');
     notif.textContent = error;
 
+    const icon = document.createElement('i');
+    icon.classList.add('icon', 'jc-center', 'ai-center', 'fa-solid', 'fa-exclamation')
+
+    notif.prepend(icon);
     document.getElementById('notifContainer').appendChild(notif);
     setTimeout(() => notif.remove(), 2000);
 }
@@ -33,9 +37,13 @@ export function displayError(error) {
  */
 export function displayMsg(msg) {
     const notif = document.createElement('li');
-    // notif.classList.add('');
+    notif.classList.add('notif', 'msg', 'flex', 'ai-center');
     notif.textContent = msg;
+    
+    const icon = document.createElement('i');
+    icon.classList.add('icon', 'jc-center', 'ai-center', 'fa-solid', 'fa-check')
 
+    notif.prepend(icon);
     document.getElementById('notifContainer').appendChild(notif);
     setTimeout(() => notif.remove(), 2000);
 }
