@@ -173,6 +173,26 @@ generateToken();
                 </div>
             </div>
         </section>
+        <section class="stop-section flex column">
+            <div class="padding">
+                <div class="stop-content flex ai-center jc-between border">
+                    <div class="stop-descr">
+                        <h4 class="stop-title">Livres en pause</h4>
+                        <p><span>3</span> livres</p>
+                    </div>
+                    <i class="stop-icon fa-solid fa-pause"></i>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="stop-content flex ai-center jc-between border">
+                    <div class="stop-descr">
+                        <h4 class="stop-title">Livres abandonnés</h4>
+                        <p><span>0</span> livre</p>
+                    </div>
+                    <i class="stop-icon fa-regular fa-flag"></i>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="./assets/js/books.js"></script>
 </body>

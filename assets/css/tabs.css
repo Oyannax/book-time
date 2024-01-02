@@ -1,20 +1,32 @@
 /* IN COMMON */
-.add-title, .reading-title, .list-title {
+.add-title,
+.reading-title,
+.list-title,
+.stop-title {
     color: var(--dark-grey);
     font-weight: 600;
 }
 
-.reading-title, .list-title {
+.reading-title,
+.list-title {
     font-size: 17px;
+}
+
+.reading-content,
+.stop-content {
+    background-color: var(--white);
+    padding: 13px 21px;
 }
 
 .book-covers>.next {
     margin-left: -11px;
 }
 
-.to-read-content, .list-container {
+.to-read-content,
+.list-container {
     cursor: grab;
 }
+
 /* ******** */
 
 
@@ -57,6 +69,7 @@
 .logout-icon>a:hover {
     color: var(--light-green);
 }
+
 /* ******** */
 
 
@@ -201,6 +214,7 @@
 .dot.active {
     background-color: var(--light-black);
 }
+
 /* ******** */
 
 
@@ -210,10 +224,6 @@
     padding: 13px 21px;
 }
 
-/* .reading-covers>.next {
-    margin-left: -11px;
-} */
-
 .small-cover {
     width: 34px;
     height: 34px;
@@ -222,10 +232,11 @@
     box-shadow: 0 0 10px #00000029;
     object-fit: cover;
 }
+
 /* ******** */
 
 
-/* TO READ */
+/* TO READ, LISTS */
 .books-section {
     gap: 16px;
 }
@@ -247,6 +258,7 @@
     color: var(--dark-green);
 }
 
+/* TO READ */
 .to-read-content {
     z-index: 1;
     cursor: grab;
@@ -259,7 +271,8 @@
     flex-shrink: 0;
 }
 
-.add-cover, .medium-cover {
+.add-cover,
+.medium-cover {
     width: 56px;
     height: 56px;
     border-radius: 28px;
@@ -289,6 +302,7 @@
     border-radius: 25px;
     z-index: 0;
 }
+
 /* ******** */
 
 
@@ -303,4 +317,30 @@
     padding: 13px 21px;
     background-color: var(--white);
     /* flex-shrink: 0; */
+}
+
+/* ******** */
+
+
+/* STOP */
+.stop-section {
+    gap: 32px;
+}
+
+.stop-content {
+    box-shadow: 0 0 20px #00000029;
+}
+
+.stop-title {
+    font-size: 18px;
+}
+
+.stop-descr>p {
+    font-size: 16px;
+}
+
+.stop-icon {
+    color: #c4c4c43b;
+    font-size: 30px;
+    rotate: 14deg;
 }
