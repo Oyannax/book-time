@@ -1,0 +1,69 @@
+/* BODY */
+.add {
+    gap: 60px;
+}
+
+/* ******** */
+
+
+/* HEADER */
+.header-text {
+    padding-top: 147px;
+    color: var(--dark-grey);
+}
+
+/* ******** */
+
+
+/* FORM */
+.form-content {
+    gap: 28px;
+}
+
+.file-input {
+    width: calc(90px + 3.2px * 2);
+    height: calc(142px + 3.2px * 2);
+    background-color: #ffffff80;
+    border: 3.2px solid var(--white);
+}
+
+.image-icon {
+    color: #94949491;
+    font-size: 18px;
+}
+
+.camera-container {
+    padding: 6px;
+    background-color: var(--white);
+    border-radius: 8px 0 8px 0;
+    bottom: -3.2px;
+    right: -3.2px;
+}
+
+.camera-icon {
+    color: var(--dark-grey);
+    font-size: 14px;
+}
+
+.inputs-container {
+    padding: 0 32px;
+    gap: 22px;
+}
+
+.input-content {
+    color: var(--dark-green);
+    font-size: 15px;
+    gap: 2px;
+}
+
+input, textarea {
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.text-input {
+    background-color: #7f7f7f3b;
+}

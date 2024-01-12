@@ -32,15 +32,13 @@ body {
     height: 100%;
 }
 
-html {
+html, textarea {
     scrollbar-width: none;
 }
 
 body {
     background-color: var(--bg);
     font-family: var(--open-sans);
-    display: grid;
-    grid-template-rows: 300px auto;
 }
 
 p {
@@ -57,37 +55,41 @@ li {
     list-style: none;
 }
 
-ul, input, button {
+ul,
+input,
+textarea,
+button {
     padding: 0;
     border: none;
 }
 
-input, button {
+/* input,
+button {
     border: none;
-}
+} */
 
-input {
-    width: 256px;
+input,
+textarea {
     border-radius: 5px;
-    text-align: center;
 }
 
-input::placeholder {
-    color: var(--grey);
-}
-
-input:focus {
-    outline: solid 3px var(--orange);
+textarea {
+    resize: none;
 }
 
 button {
     background: none;
     cursor: pointer;
 }
+
 /* ******** */
 
 
 /* SHORTCUTS */
+.hidden {
+    display: none;
+}
+
 .flex {
     display: flex;
 }
@@ -164,10 +166,16 @@ button {
 .padding {
     padding: 0 32px;
 }
+
 /* ******** */
 
 
 /* GLOBAL */
+.basic-body {
+    display: grid;
+    grid-template-rows: 300px auto;
+}
+
 .header-container {
     min-width: 320px;
     background-image: url(../img/header-bg.svg);
@@ -183,6 +191,12 @@ button {
     font-family: var(--dm-serif);
     font-weight: 400;
     color: var(--light-green);
+}
+
+.header-text {
+    padding-left: 22px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .notif-container {
@@ -224,4 +238,9 @@ button {
 
 .error>.icon {
     background-color: var(--alert);
+}
+
+.text-input {
+    padding: 5px;
+    color: var(--black);
 }

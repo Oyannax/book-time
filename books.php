@@ -15,12 +15,12 @@ generateToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/global.css">
-    <link rel="stylesheet" href="./assets/css/tabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/tabs.css">
     <title>Book Time - Liste de lecture</title>
 </head>
 
-<body>
+<body class="basic-body">
     <header>
         <div class="header-container flex column full-height">
             <div class="header-content flex jc-center fit-height">
@@ -41,20 +41,22 @@ generateToken();
         </div>
     </header>
     <main class="books-main flex column">
-        <section class="absol">
+        <section>
             <?= displayNotif() ?>
         </section>
         <section class="reading-books flex column">
             <div class="carousel-container flex column device-width">
                 <div class="carousel-content over-hidden">
                     <div class="slide-container flex fit-width padding">
-                        <div class="slide add-slide flex ai-end jc-between column">
-                            <div class="add-descr flex column full-width">
-                                <h3 class="add-title">Ajouter un livre</h3>
-                                <p class="add-text">Quel livre avez-vous lu aujourd'hui ?</p>
+                        <a href="./add.php">
+                            <div class="slide add-slide flex ai-end jc-between column">
+                                <div class="add-descr flex column full-width">
+                                    <h3 class="add-title">Ajouter un livre</h3>
+                                    <p class="add-text">Quel livre avez-vous lu aujourd'hui ?</p>
+                                </div>
+                                <i class="add-icon text-center fa-solid fa-plus"></i>
                             </div>
-                            <i class="add-icon text-center fa-solid fa-plus"></i>
-                        </div>
+                        </a>
                         <div class="slide book-slide">
                             <div class="bar-container relat over-hidden">
                                 <div class="progress-bar inactive"></div>
@@ -127,9 +129,11 @@ generateToken();
             <div class="to-read-container flex column ai-center device-width">
                 <div class="to-read-content flex device-width over-hidden">
                     <ul class="to-read-covers flex">
-                        <li class="add-cover flex ai-center jc-center">
-                            <i class="add-icon text-center fa-solid fa-plus"></i>
-                        </li>
+                        <a href="./add.php">
+                            <li class="add-cover flex ai-center jc-center">
+                                <i class="add-icon text-center fa-solid fa-plus"></i>
+                            </li>
+                        </a>
                         <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                         <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>
                         <li><img class="medium-cover" src="./assets/img/the-hunger-games.jpg" alt="The Hunger Games book cover"></li>

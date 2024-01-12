@@ -6,6 +6,7 @@
 .register {
     gap: 60px;
 }
+
 /* ******** */
 
 
@@ -18,6 +19,7 @@
     font-size: 39px;
     line-height: 30px;
 }
+
 /* ******** */
 
 
@@ -34,9 +36,17 @@
     gap: 11px;
 }
 
-.text-input {
-    padding: 5px 0;
-    color: var(--black);
+input {
+    width: 256px;
+    text-align: center;
+}
+
+input::placeholder {
+    color: var(--grey);
+}
+
+input:focus {
+    outline: solid 3px var(--orange);
 }
 
 .submit-input {
