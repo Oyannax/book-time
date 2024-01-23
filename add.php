@@ -50,10 +50,17 @@
                     </label>
                     <label class="input-content flex column">
                         Résumé
-                        <textarea class="text-input" type="text" name=""></textarea>
+                        <textarea class="text-input" type="text" name="" rows="6"></textarea>
                     </label>
                 </div>
+                <label class="fixed-button save flex ai-center">
+                    <i class="icon fa-solid fa-check"></i>
+                    <input class="fixed-content" type="submit" value="Sauvegarder">
+                </label>
             </form>
+            <div class="fixed-button back flex ai-center">
+                <i class="icon fixed-content fa-solid fa-arrow-left"></i>
+            </div>
         </section>
     </main>
 </body>

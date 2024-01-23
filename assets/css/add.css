@@ -29,7 +29,7 @@
 
 .image-icon {
     color: #94949491;
-    font-size: 18px;
+    font-size: 20.57px;
 }
 
 .camera-container {
@@ -42,7 +42,7 @@
 
 .camera-icon {
     color: var(--dark-grey);
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .inputs-container {
@@ -66,4 +66,47 @@ input:focus, textarea:focus {
 
 .text-input {
     background-color: #7f7f7f3b;
+}
+
+/* ******** */
+
+
+/* FIXED */
+.fixed-button {
+    max-height: 61px;
+    padding: 20px 26px;
+    background-color: var(--white);
+    box-shadow: 0 0 20px #00000029;
+    position: fixed;
+    top: 38px;
+}
+
+.save {
+    border-radius: 31px 0 0 31px;
+    right: 0;
+    gap: 10px;
+}
+
+.back {
+    border-radius: 0 31px 31px 0;
+    left: 0;
+}
+
+.save>.icon {
+    color: var(--dark-green);
+    font-size: 28.8px;
+}
+
+.back>.icon {
+    font-size: 23.99px;
+}
+
+.fixed-content {
+    color: var(--black);
+}
+
+.save>.fixed-content {
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
 }
