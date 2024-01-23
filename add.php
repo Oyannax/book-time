@@ -58,9 +58,11 @@
                     <input class="fixed-content" type="submit" value="Sauvegarder">
                 </label>
             </form>
-            <div class="fixed-button back flex ai-center">
-                <i class="icon fixed-content fa-solid fa-arrow-left"></i>
-            </div>
+            <a href="./books.php">
+                <div class="fixed-button back flex ai-center">
+                    <i class="icon fixed-content fa-solid fa-arrow-left"></i>
+                </div>
+            </a>
         </section>
     </main>
 </body>
