@@ -77,6 +77,10 @@ textarea {
     border-radius: 5px;
 }
 
+input[type=number] {
+    appearance: textfield;
+}
+
 textarea {
     resize: none;
 }

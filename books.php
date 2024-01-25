@@ -5,6 +5,8 @@ include './includes/_db.php';
 
 session_start();
 generateToken();
+
+if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.', 'index.php');
 ?>
 
 <!DOCTYPE html>

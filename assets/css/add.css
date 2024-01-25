@@ -56,6 +56,10 @@
     gap: 2px;
 }
 
+input {
+    border-radius: 0;
+}
+
 input, textarea {
     width: 100%;
 }

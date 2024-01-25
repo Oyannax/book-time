@@ -1,5 +1,5 @@
-const notifContainer = document.getElementById('notifContainer');
-if (notifContainer.children.length > 0) setTimeout(() => notifContainer.innerHTML = '', 2000);
+// const notifContainer = document.getElementById('notifContainer');
+// if (notifContainer.children.length > 0) setTimeout(() => notifContainer.innerHTML = '', 2000);
 
 
 const carousel = document.querySelector('.carousel-content');

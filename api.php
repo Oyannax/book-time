@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'register' && i
 
     // Valid email?
     $email = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
-    if (!checkEmailFormat($data['email'])) throwAsyncError('Veuillez saisir une adresse mail valide.');
+    if (!isEmailValid($data['email'])) throwAsyncError('Veuillez saisir une adresse mail valide.');
 
     // Valid password?
-    if (!checkPwdFormat($data['password'])) throwAsyncError('Veuillez saisir un mot de passe valide.');
+    if (!isPwdValid($data['password'])) throwAsyncError('Veuillez saisir un mot de passe valide.');
 
     try {
         $query = $dbCo->prepare('SELECT user_email FROM profile WHERE user_email = :email;');
@@ -78,4 +78,26 @@ else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'login' &&
     } catch (Exception $e) {
         throwAsyncError('Une erreur s\'est produite lors de la connexion au compte.' . $e->getMessage());
     }
+}
+
+
+// ADD
+else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $data['action'] === 'add' && isset($data['title'])) {
+    // All fields completed?
+    if (strlen($data['title']) <= 0) throwAsyncError('Veuillez saisir le titre du livre.');
+
+    // Valid image upload?
+    // if (strlen($data['cover']) > 0) {
+    //     if (!isset($_FILES['image'])) throwAsyncError('Aucun fichier trouvé.');
+
+    //     $filePath = $_FILES['image']['tmp_name'];
+    //     $fileSize = filesize($filePath);
+    //     $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
+    //     $fileType = finfo_file($fileInfo, $filePath);
+    // };
+
+    // Valid ISBN?
+    if (strlen($data['isbn']) > 0) {
+        if (!preg_match('@(?=.*\d).{13}|(?=.*\d).{10}@', $data['isbn'])) throwAsyncError('Votre ISBN doit comporter soit 10 ou 13 chiffres.');
+    };
 }

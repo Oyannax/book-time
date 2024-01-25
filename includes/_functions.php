@@ -94,7 +94,7 @@ function checkXSS(array &$array): void
  * @param string $pwd
  * @return boolean
  */
-function checkPwdFormat(string $pwd): bool
+function isPwdValid(string $pwd): bool
 {
     $uppercase = preg_match('@[A-Z]@', $pwd);
     $lowercase = preg_match('@[a-z]@', $pwd);
@@ -113,7 +113,7 @@ function checkPwdFormat(string $pwd): bool
  * @param string $email
  * @return boolean
  */
-function checkEmailFormat(string $email): bool
+function isEmailValid(string $email): bool
 {
     $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
     $atPos = mb_strpos($cleanEmail, '@');

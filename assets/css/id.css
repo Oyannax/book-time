@@ -49,6 +49,10 @@ input:focus {
     outline: solid 3px var(--orange);
 }
 
+input[type=submit]:focus {
+    outline: none;
+}
+
 .submit-input {
     padding: 9px 0;
     background-color: var(--dark-green);
