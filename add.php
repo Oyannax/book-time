@@ -32,12 +32,12 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
         </section>
         <section class="">
             <form id="addForm" class="form-content flex column ai-center full-width" action="" method="post" enctype="multipart/form-data">
-                <label class="file-input flex ai-center jc-center relat border">
-                    <i class="image-icon fa-solid fa-image"></i>
+                <label id="imgContainer" class="file-input flex ai-center jc-center relat border">
+                    <i id="imgIcon" class="image-icon fa-solid fa-image"></i>
                     <div class="camera-container flex absol">
                         <i class="camera-icon fa-solid fa-camera"></i>
                     </div>
-                    <input class="hidden" type="file" name="image" accept="image/png, image/jpeg">
+                    <input id="fileInput" class="hidden" type="file" name="image" accept="image/png, image/jpeg">
                 </label>
                 <div class="inputs-container flex column full-width">
                     <label class="input-content flex column">

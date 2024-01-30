@@ -1,5 +1,26 @@
 import * as utils from './functions';
 
+const imgContainer = document.getElementById('imgContainer');
+const fileInput = document.getElementById('fileInput');
+
+fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+        const fileReader = new FileReader();
+
+        fileReader.onload = () => {
+            imgContainer.style.backgroundImage = `url(${fileReader.result})`;
+            imgContainer.style.backgroundSize = 'cover';
+            imgContainer.style.backgroundPosition = 'center';
+        }
+
+        fileReader.readAsDataURL(fileInput.files[0]);
+
+        if (document.getElementById('imgIcon') !== null) {
+            document.getElementById('imgIcon').remove();
+        }
+    }
+})
+
 document.getElementById('addForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
