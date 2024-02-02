@@ -96,14 +96,36 @@ if ($contentType === 'application/json') {
         }
 
         // Valid image upload?
-        // if (strlen($formData['cover']) > 0) {
-        //     if (!isset($_FILES['image'])) throwAsyncError('Aucun fichier trouvé.');
+        if (!empty($_FILES['image']['tmp_name'][0])) {
 
-        //     $filePath = $_FILES['image']['tmp_name'];
-        //     $fileSize = filesize($filePath);
-        //     $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
-        //     $fileType = finfo_file($fileInfo, $filePath);
-        // }
+            $filePath = $_FILES['image']['tmp_name'];
+            $fileSize = filesize($filePath);
+            $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
+            $fileType = finfo_file($fileInfo, $filePath);
+
+            if ($fileSize === 0) {
+                header('content-type:application/json');
+
+                throwAsyncError('Le fichier est vide.');
+            }
+
+            if ($fileSize > 3145728) {
+                header('content-type:application/json');
+
+                throwAsyncError('Le fichier est trop volumineux.');
+            }
+
+            $allowedTypes = [
+                'image/png' => 'png',
+                'image/jpeg' => 'jpg'
+            ];
+
+            if (!in_array($fileType, array_keys($allowedTypes))) {
+                header('content-type:application/json');
+
+                throwAsyncError('Fichier non autorisé.');
+            }
+        }
 
         // Valid ISBN?
         if (strlen($formData['isbn']) > 0) {
@@ -111,6 +133,15 @@ if ($contentType === 'application/json') {
                 header('content-type:application/json');
 
                 throwAsyncError('Votre ISBN doit comporter soit 10 ou 13 chiffres.');
+            }
+        }
+
+        // Valid size?
+        if (strlen($formData['size']) > 0) {
+            if (!preg_match('@(?=.*\d).{1,}@', $formData['size'])) {
+                header('content-type:application/json');
+
+                throwAsyncError('Veuillez saisir un nombre de pages.');
             }
         }
 

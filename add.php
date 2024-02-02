@@ -64,6 +64,39 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
                         Résumé
                         <textarea class="text-input" name="summary" rows="6"></textarea>
                     </label>
+                    <label class="input-content flex column">
+                        Statut
+                        <div>
+                            <label class="">
+                                En train de lire
+                                <input class="hidden" type="radio" name="" value="reading">
+                            </label>
+                            <label class="">
+                                À lire
+                                <input class="hidden" type="radio" name="" value="to-read">
+                            </label>
+                            <label class="">
+                                Liste de souhaits
+                                <input class="hidden" type="radio" name="" value="wish">
+                            </label>
+                            <label class="">
+                                Préféré
+                                <input class="hidden" type="radio" name="" value="favorite">
+                            </label>
+                            <label class="">
+                                En pause
+                                <input class="hidden" type="radio" name="" value="on-pause">
+                            </label>
+                            <label class="">
+                                Abandonné
+                                <input class="hidden" type="radio" name="" value="abandoned">
+                            </label>
+                            <label class="">
+                                Lu
+                                <input class="hidden" type="radio" name="" value="read">
+                            </label>
+                        </div>
+                    </label>
                     <input type="hidden" name="action" value="add">
                     <input id="token" type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                 </div>
