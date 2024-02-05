@@ -69,31 +69,31 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
                         <div class="radio-container flex">
                             <label class="radio-input">
                                 En train de lire
-                                <input class="hidden" type="radio" name="status" value="reading">
+                                <input id="reading" class="hidden" type="radio" name="status" value="reading">
                             </label>
                             <label class="radio-input">
                                 À lire
-                                <input class="hidden" type="radio" name="status" value="to-read">
+                                <input id="to-read" class="hidden" type="radio" name="status" value="to-read">
                             </label>
                             <label class="radio-input">
                                 Liste de souhaits
-                                <input class="hidden" type="radio" name="status" value="wish">
+                                <input id="wish" class="hidden" type="radio" name="status" value="wish">
                             </label>
                             <label class="radio-input">
                                 Préféré
-                                <input class="hidden" type="radio" name="status" value="favorite">
+                                <input id="favorite" class="hidden" type="radio" name="status" value="favorite">
                             </label>
                             <label class="radio-input">
                                 En pause
-                                <input class="hidden" type="radio" name="status" value="on-pause">
+                                <input id="on-pause" class="hidden" type="radio" name="status" value="on-pause">
                             </label>
                             <label class="radio-input">
                                 Abandonné
-                                <input class="hidden" type="radio" name="status" value="abandoned">
+                                <input id="abandoned" class="hidden" type="radio" name="status" value="abandoned">
                             </label>
                             <label class="radio-input">
                                 Lu
-                                <input class="hidden" type="radio" name="status" value="read">
+                                <input id="read" class="hidden" type="radio" name="status" value="read">
                             </label>
                         </div>
                     </label>

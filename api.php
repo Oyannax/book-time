@@ -161,7 +161,7 @@ if ($contentType === 'application/json') {
             'Lu' => 'read'
         ];
 
-        if (!in_array($formData['status'], array_keys($allowedStatus))) {
+        if (!in_array($formData['status'], array_values($allowedStatus))) {
             header('content-type:application/json');
 
             throwAsyncError('Statut inconnu.');

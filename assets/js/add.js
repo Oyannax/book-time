@@ -1,5 +1,9 @@
 import * as utils from './functions';
 
+const searchParams = new URLSearchParams(window.location.search);
+
+document.getElementById(`${searchParams.get('status')}`).checked = true;
+
 const imgContainer = document.getElementById('imgContainer');
 const fileInput = document.getElementById('fileInput');
 

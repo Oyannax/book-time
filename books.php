@@ -50,7 +50,7 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
             <div class="carousel-container flex column device-width">
                 <div class="carousel-content over-hidden">
                     <div class="slide-container flex fit-width padding">
-                        <a href="./add.php">
+                        <a href="./add.php?status=reading">
                             <div class="slide add-slide flex ai-end jc-between column">
                                 <div class="add-descr flex column full-width">
                                     <h3 class="add-title">Ajouter un livre</h3>
@@ -131,7 +131,7 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
             <div class="to-read-container flex column ai-center device-width">
                 <div class="to-read-content flex device-width over-hidden">
                     <ul class="to-read-covers flex">
-                        <a href="./add.php">
+                        <a href="./add.php?status=to-read">
                             <li class="add-cover flex ai-center jc-center">
                                 <i class="add-icon text-center fa-solid fa-plus"></i>
                             </li>
