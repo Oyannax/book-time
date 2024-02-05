@@ -94,6 +94,11 @@ if ($contentType === 'application/json') {
 
             throwAsyncError('Veuillez saisir le titre du livre.');
         }
+        if (!isset($formData['status'])) {
+            header('content-type:application/json');
+
+            throwAsyncError('Veuillez définir le statut du livre.');
+        }
 
         // Valid image upload?
         if (!empty($_FILES['image']['tmp_name'][0])) {
@@ -143,6 +148,23 @@ if ($contentType === 'application/json') {
 
                 throwAsyncError('Veuillez saisir un nombre de pages.');
             }
+        }
+
+        // Valid status?
+        $allowedStatus = [
+            'En train de lire' => 'reading',
+            'À lire' => 'to-read',
+            'Liste de souhaits' => 'wish',
+            'Préféré' => 'favorite',
+            'En pause' => 'on-pause',
+            'Abandonné' => 'abandoned',
+            'Lu' => 'read'
+        ];
+
+        if (!in_array($formData['status'], array_keys($allowedStatus))) {
+            header('content-type:application/json');
+
+            throwAsyncError('Statut inconnu.');
         }
 
         header('content-type:application/json');

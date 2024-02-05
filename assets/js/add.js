@@ -37,6 +37,10 @@ document.getElementById('addForm').addEventListener('submit', function (event) {
         utils.displayError('Veuillez saisir le titre du livre.');
         return;
     }
+    if (formData.get('status') === null) {
+        utils.displayError('Veuillez définir le statut du livre.');
+        return;
+    }
 
     fetch('api.php', {
         method: 'POST',
