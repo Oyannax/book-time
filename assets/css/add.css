@@ -60,16 +60,39 @@ input {
     border-radius: 0;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
 
 .text-input {
     background-color: #7f7f7f3b;
+}
+
+.radio-container {
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.radio-input {
+    padding: 6px 14px;
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border: 2px solid #c4c4c43b;
+    border-radius: 18px;
+    box-shadow: 0 0 15px #00000029;
+}
+
+.radio-input:has(input:checked) {
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    border-color: var(--dark-green);
+    box-shadow: none;
 }
 
 /* ******** */
