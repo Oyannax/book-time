@@ -209,9 +209,11 @@ button {
 
 .notif-container {
     margin-left: 30px;
+    position: fixed;
     top: 25px;
     right: 30px;
     gap: 16px;
+    z-index: 1;
 }
 
 .notif {

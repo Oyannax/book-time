@@ -192,7 +192,7 @@ function throwAsyncMsg(string $msg): void
  */
 function displayNotif(): string
 {
-    $html = '<ul id="notifContainer" class="notif-container flex column absol">';
+    $html = '<ul id="notifContainer" class="notif-container flex column">';
 
     if (isset($_SESSION['msg'])) {
         $html .= '<li class="notif msg flex ai-center"><i class="icon jc-center ai-center fa-solid fa-check"></i>' . $_SESSION['msg'] . '</li>';

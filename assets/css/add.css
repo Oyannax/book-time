@@ -15,6 +15,14 @@
 /* ******** */
 
 
+/* NOTIF */
+.notif-container {
+    top: calc(38px + 61px + 16px);
+}
+
+/* ******** */
+
+
 /* FORM */
 .form-content {
     gap: 28px;
