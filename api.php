@@ -51,7 +51,7 @@ if ($contentType === 'application/json') {
                 throwAsyncMsg('Votre compte a été créé avec succès ! Redirection...');
             }
         } catch (Exception $e) {
-            throwAsyncError('Une erreur s\'est produite lors de la création du compte.' . $e->getMessage());
+            throwAsyncError('Une erreur s\'est produite lors de la création du compte. ' . $e->getMessage());
         }
     }
 
@@ -80,7 +80,7 @@ if ($contentType === 'application/json') {
                 throwAsyncMsg('Vous êtes bien connecté(e) ! Redirection...');
             }
         } catch (Exception $e) {
-            throwAsyncError('Une erreur s\'est produite lors de la connexion au compte.' . $e->getMessage());
+            throwAsyncError('Une erreur s\'est produite lors de la connexion au compte. ' . $e->getMessage());
         }
     }
 } else if (strpos($contentType, 'multipart/form-data') !== false) {
@@ -91,12 +91,10 @@ if ($contentType === 'application/json') {
         // All fields completed?
         if (strlen($formData['title']) <= 0) {
             header('content-type:application/json');
-
             throwAsyncError('Veuillez saisir le titre du livre.');
         }
         if (!isset($formData['status'])) {
             header('content-type:application/json');
-
             throwAsyncError('Veuillez définir le statut du livre.');
         }
 
@@ -110,13 +108,11 @@ if ($contentType === 'application/json') {
 
             if ($fileSize === 0) {
                 header('content-type:application/json');
-
                 throwAsyncError('Le fichier est vide.');
             }
 
             if ($fileSize > 3145728) {
                 header('content-type:application/json');
-
                 throwAsyncError('Le fichier est trop volumineux.');
             }
 
@@ -127,7 +123,6 @@ if ($contentType === 'application/json') {
 
             if (!in_array($fileType, array_keys($allowedTypes))) {
                 header('content-type:application/json');
-
                 throwAsyncError('Fichier non autorisé.');
             }
         }
@@ -136,7 +131,6 @@ if ($contentType === 'application/json') {
         if (strlen($formData['isbn']) > 0) {
             if (!preg_match('@(?=.*\d).{13}|(?=.*\d).{10}@', $formData['isbn'])) {
                 header('content-type:application/json');
-
                 throwAsyncError('Votre ISBN doit comporter soit 10 ou 13 chiffres.');
             }
         }
@@ -145,7 +139,6 @@ if ($contentType === 'application/json') {
         if (strlen($formData['size']) > 0) {
             if (!preg_match('@(?=.*\d).{1,}@', $formData['size'])) {
                 header('content-type:application/json');
-
                 throwAsyncError('Veuillez saisir un nombre de pages.');
             }
         }
@@ -163,11 +156,75 @@ if ($contentType === 'application/json') {
 
         if (!in_array($formData['status'], array_values($allowedStatus))) {
             header('content-type:application/json');
-
             throwAsyncError('Statut inconnu.');
         }
 
-        header('content-type:application/json');
-        throwAsyncMsg('Formulaire traité avec succès.');
+        $dbCo->beginTransaction();
+
+        try {
+            $query1 = $dbCo->prepare('INSERT INTO book (book_title, book_summary) VALUES (:title, :summary);');
+            $query1->execute([
+                'title' => $formData['title'],
+                'summary' => $formData['summary']
+            ]);
+            $idBook = $dbCo->lastInsertId();
+
+            $query2 = $dbCo->prepare('INSERT INTO author (author_name) VALUES (:author);');
+            $query2->execute([
+                'author' => $formData['author']
+            ]);
+            $idAuthor = $dbCo->lastInsertId();
+
+            $query3 = $dbCo->prepare('INSERT INTO writing (Id_book, Id_author) VALUES (:book, :author);');
+            $query3->execute([
+                'book' => $idBook,
+                'author' => $idAuthor
+            ]);
+
+            $query4 = $dbCo->prepare('INSERT INTO editor (editor_name) VALUES (:editor);');
+            $query4->execute([
+                'editor' => $formData['editor']
+            ]);
+            $idEditor = $dbCo->lastInsertId();
+
+            $query5 = $dbCo->prepare('INSERT INTO edition (book_ISBN, book_size, book_cover, Id_editor, Id_book) VALUES (:isbn, :size, :image, :editor, :book);');
+            $query5->execute([
+                'isbn' => $formData['isbn'],
+                'size' => $formData['size'],
+                'image' => $_FILES['image']['tmp_name'],
+                'editor' => $idEditor,
+                'book' => $idBook
+            ]);
+            $idEdition = $dbCo->lastInsertId();
+
+            $query6 = $dbCo->prepare('INSERT INTO reading (Id_edition, Id_profile) VALUES (:edition, :profile);');
+            $query6->execute([
+                'edition' => $idEdition,
+                'profile' => $_SESSION['id_profile']
+            ]);
+
+            $query7 = $dbCo->prepare('INSERT INTO list (list_name, Id_profile) VALUES (:status, :profile);');
+            $query7->execute([
+                'status' => array_search($formData['status'], $allowedStatus),
+                'profile' => $_SESSION['id_profile']
+            ]);
+            $idList = $dbCo->lastInsertId();
+
+            $query8 = $dbCo->prepare('INSERT INTO grouping_ (Id_edition, Id_list) VALUES (:edition, :list);');
+            $query8->execute([
+                'edition' => $idEdition,
+                'list' => $idList
+            ]);
+
+            $dbCo->commit();
+
+            header('content-type:application/json');
+            throwAsyncMsg('Livre ajouté avec succès ! Redirection...');
+        } catch (Exception $e) {
+            $dbCo->rollBack();
+
+            header('content-type:application/json');
+            throwAsyncError('Une erreur s\'est produite lors du traitement du formulaire. ' . $e->getMessage());
+        }
     }
 }

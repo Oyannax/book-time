@@ -61,6 +61,7 @@ document.getElementById('addForm').addEventListener('submit', function (event) {
             }
 
             utils.displayMsg(response.msg);
+            setTimeout(() => document.location.replace('books.php'), 1500);
             return;
         })
 })
