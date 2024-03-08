@@ -34,7 +34,7 @@ generateToken();
             <?= displayNotif() ?>
         </section>
         <section class="form-container flex column ai-center">
-            <form id="loginForm" class="form-content flex column" action="" method="post">
+            <form id="loginForm" class="form-content flex column" method="post">
                 <div class="inputs-container flex column">
                     <input class="text-input" type="email" name="email" placeholder="Adresse mail" required>
                     <input class="text-input" type="password" name="password" placeholder="Mot de passe" required>

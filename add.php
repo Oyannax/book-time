@@ -31,7 +31,7 @@ if (!isset($_SESSION['id_profile'])) addErrorAndExit('Veuillez vous identifier.'
             <?= displayNotif() ?>
         </section>
         <section class="">
-            <form id="addForm" class="form-content flex column ai-center full-width" action="" method="post" enctype="multipart/form-data">
+            <form id="addForm" class="form-content flex column ai-center full-width" method="post" enctype="multipart/form-data">
                 <label id="imgContainer" class="file-input flex ai-center jc-center relat border">
                     <i id="imgIcon" class="image-icon fa-solid fa-image"></i>
                     <div class="camera-container flex absol">

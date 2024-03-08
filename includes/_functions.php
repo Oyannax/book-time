@@ -96,15 +96,17 @@ function checkXSS(array &$array): void
  */
 function isPwdValid(string $pwd): bool
 {
-    $uppercase = preg_match('@[A-Z]@', $pwd);
-    $lowercase = preg_match('@[a-z]@', $pwd);
-    $number = preg_match('@[0-9]@', $pwd);
+    return preg_match('@(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}@', $pwd);
+    
+    // $uppercase = preg_match('@[A-Z]@', $pwd);
+    // $lowercase = preg_match('@[a-z]@', $pwd);
+    // $number = preg_match('@[0-9]@', $pwd);
 
-    if (!$uppercase || !$lowercase || !$number || strlen($pwd) < 8) {
-        return false;
-    } else {
-        return true;
-    }
+    // if (!$uppercase || !$lowercase || !$number || strlen($pwd) < 8) {
+    //     return false;
+    // } else {
+    //     return true;
+    // }
 }
 
 /**
@@ -115,14 +117,21 @@ function isPwdValid(string $pwd): bool
  */
 function isEmailValid(string $email): bool
 {
-    $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $atPos = mb_strpos($cleanEmail, '@');
-    $domain = mb_substr($cleanEmail, $atPos + 1);
-    if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL) || !checkdnsrr($domain . '.', 'MX')) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false;
-    } else {
-        return true;
     }
+    
+    $domain = substr($email, strpos($email, '@') + 1);
+    return checkdnsrr($domain, 'MX');
+
+    // $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+    // $atPos = mb_strpos($cleanEmail, '@');
+    // $domain = mb_substr($cleanEmail, $atPos + 1);
+    // if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL) || !checkdnsrr($domain . '.', 'MX')) {
+    //     return false;
+    // } else {
+    //     return true;
+    // }
 }
 
 
